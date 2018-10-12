@@ -6,6 +6,8 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const session = require('express-session')
+//const bcyrpt = require('bcrypt')
 //___________________
 //Port
 //___________________
@@ -16,7 +18,13 @@ const PORT = process.env.PORT || 3000;
 //Database
 //___________________
 // How to connect to the database either via heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `project2`;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `findmefido`;
+
+app.use(session({
+  secret: "secret",
+  resave: false,
+  saveUninitialized: false
+}))
 
 
 //Connect to Mongo
@@ -34,7 +42,6 @@ db.on('open' , ()=>{});
 app.use(express.static('public'))
 
 //populates req.body with parsed info from forms, if no data from forms it will return an empty object
-
 app.use(express.urlencoded({extended: false})) //extended: false - does not allow nested objects in query strings
 app.use(express.json());//returns middleware that onlt parses JSON
 
@@ -42,10 +49,45 @@ app.use(express.json());//returns middleware that onlt parses JSON
 app.use(methodOverride('_method'))//alow post, put and delete from a form
 
 
+//Controllers
+const sessionsController =
+require('./controllers/sessions.js')
+app.use('/sessions', sessionsController)
+
+const userController = require('./controllers/users.js')
+app.use('/users', userController)
+
+
+
+
 //routes
 app.get('/', (req, res)=> {
-  res.send('hello world')
+  res.render('index.ejs', {
+    currentUser: req.session.currentUser
+  })
 })
+
+app.get('/users/new', (req, res)=> {
+  res.render('./models/users.js')
+})
+
+
+// User.create(seed, (err, createdUsers) => {
+//   console.log(createdUsers);
+//   res.redirect('/')
+// })
+
+
+// const seed = require('./models/seed.js')
+//const pet = require('./models/pets.js')
+// app.get('/seed', (req, res)=> {
+//   seed.ForEach(seed)
+// })
+// pet.create(seed, (err, createdUsers) => {
+//   console.log(createdUsers);
+//   res.redirect('/')
+// })
+
 
 //listen
 app.listen(PORT, () => {

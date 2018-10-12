@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>FindMeFido</h1>
+  <ul>
+<% if (currentUser) { %>
+  Welcome <%=currentUser.username%>!
+  <a href = "/sessions/">Log Out </a>
+  <% } else {%>
+
+    <li>
+      <a href = "/users/new"> Create Account</a>
+    </li>
+Or
+  <li>
+    <a href = "/sessions/new"> Log In</a>
+  </li>
+  <%}%>
+
+  </ul>
+
+
+
+  </body>
+</html>
