@@ -6,30 +6,28 @@
   </head>
   <body>
     <h1>FindMeFido</h1>
-  <ul>
   <% if (currentUser) { %>
     Welcome <%=currentUser.username%>!
     <a href = "/sessions/">Log Out </a>
     <% } else {%>
-
-      <li>
         <a href = "/users/new"> Create Account</a>
-      </li>
   Or
-    <li>
       <a href = "/sessions/new"> Log In</a>
-    </li>
+
     <%}%>
+
+      <ul>
     <%for (let i=0; i < pets.length; i++) {%>
 
-      <li>
-          <%= pets[i].name%>
-
-
-    </a></li>
+  <li>
+    <a href = "/pets/<%=pets[i].id%>">
+    <%= pets[i].name%>
+    <img src = "<%=pets[i].img%>">
+    </a>
+    <%=pets[i].about %>
+    <%=pets[i].missing %>
+  </li>
       <% } %>
-
     </ul>
-
   </body>
 </html>
