@@ -7,6 +7,8 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 const session = require('express-session')
+const bodyParser = require('body-parser')
+const pets = express.Router()
 //const bcyrpt = require('bcrypt')
 //___________________
 //Port
@@ -20,11 +22,6 @@ const PORT = process.env.PORT || 3000;
 // How to connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `findmefido`;
 
-app.use(session({
-  secret: "secret",
-  resave: false,
-  saveUninitialized: false
-}))
 
 
 //Connect to Mongo
@@ -44,9 +41,16 @@ app.use(express.static('public'))
 //populates req.body with parsed info from forms, if no data from forms it will return an empty object
 app.use(express.urlencoded({extended: false})) //extended: false - does not allow nested objects in query strings
 app.use(express.json());//returns middleware that onlt parses JSON
-
+app.use(bodyParser.json())
 //method methodOverride
 app.use(methodOverride('_method'))//alow post, put and delete from a form
+
+app.use(session({
+  secret: "secret",
+  resave: false,
+  saveUninitialized: false
+}))
+
 
 
 //Controllers
@@ -57,36 +61,32 @@ app.use('/sessions', sessionsController)
 const userController = require('./controllers/users.js')
 app.use('/users', userController)
 
+const petsController = require('./controllers/pets')
+app.use('/pets', petsController)
 
-
-
-//routes
-app.get('/', (req, res)=> {
-  res.render('index.ejs', {
-    currentUser: req.session.currentUser
-  })
-})
-
-app.get('/users/new', (req, res)=> {
-  res.render('./models/users.js')
-})
-
-
-// User.create(seed, (err, createdUsers) => {
-//   console.log(createdUsers);
-//   res.redirect('/')
+// const Pet = require('./models/pets')
+// app.get('/pets', (req, res)=> {
+//   res.render('index.ejs', {
+//     currentUser: req.session.currentUser,
+//   })
 // })
 
 
+//
+// pets.get('/', (req, res)=> {
+//   Pet.find({}, (err, pets)=> {
+//     if(err){console.log(err);}
+//     res.render('/index.ejs', { pets: pets })
+//   })
+// })
+//
 // const seed = require('./models/seed.js')
-//const pet = require('./models/pets.js')
 // app.get('/seed', (req, res)=> {
-//   seed.ForEach(seed)
-// })
-// pet.create(seed, (err, createdUsers) => {
-//   console.log(createdUsers);
-//   res.redirect('/')
-// })
+//   Pet.create(seed, (err, createdPets)=> {
+//     console.log(createdPets);
+//     res.redirect('/')
+//     })
+//   })
 
 
 //listen

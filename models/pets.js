@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
-
 const Schema = mongoose.Schema
 
 const petSchema = Schema({
   name: String,
-  about: [Array],
-  missing: [Array],
+  about: String,
+  img: String,
+  missing: String,
 
 })
 
