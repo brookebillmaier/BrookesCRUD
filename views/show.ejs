@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ./partials/head.ejs %>
   </head>
   <body>
-    <%=pets.name%>
-    <img src = "<%=pets.img%>">
+      <%=pets.name%> <br>
+    <img src = "<%=pets.img%>"><br>
     <% var months = ["January", "February", "March",
       "April", "May", "June", "July",
       "August", "September", "October",
@@ -14,12 +13,7 @@
       <% var day = pets.missing.getDate();%>
       <% var month = months[pets.missing.getMonth()]%>
       <% var year = pets.missing.getFullYear();%>
-    Missing Since:  <%= month + ' ' + day + ', ' + year %>
-
-
-
-
-
+    Missing Since:  <%= month + ' ' + day + ', ' + year %><br>
     <%=pets.about%>
 
 

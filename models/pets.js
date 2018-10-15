@@ -6,6 +6,7 @@ const petSchema = Schema({
   about: String,
   img: String,
   missing: Date,
+  type: String,
 })
 
 

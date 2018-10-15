@@ -1,0 +1,18 @@
+.container {
+  height: 800px;
+  width: 100%;
+}
+
+.buttoncontainer {
+  right: 50px;
+  position: absolute;
+}
+
+
+h5 {
+  align: center;
+}
+
+.divider {
+  margin-bottom: 10px;
+}

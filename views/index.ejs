@@ -1,33 +1,74 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+<% include ./partials/head.ejs %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel = "stylesheet" href ="./css/index.css">
+<title>FindMe</title>
   </head>
   <body>
-    <h1>FindMeFido</h1>
-  <% if (currentUser) { %>
-    Welcome <%=currentUser.username%>!
-    <a href = "/sessions/">Log Out </a>
-    <% } else {%>
-        <a href = "/users/new"> Create Account</a>
-  Or
-      <a href = "/sessions/new"> Log In</a>
 
-    <%}%>
-
-      <ul>
-    <%for (let i=0; i < pets.length; i++) {%>
-
-  <li>
-    <a href = "/pets/<%=pets[i].id%>">
-    <%= pets[i].name%>
-    <img src = "<%=pets[i].img%>">
-    </a>
-    <%=pets[i].about %>
-    <%=pets[i].missing %>
+<div class="slider">
+  <ul class="slides">
+    <li>
+  <img src="https://pixabay.com/get/eb31b30a29f6003ed1534705fb0938c9bd22ffd41cb2184791f7c178a4/men-2425121_1920.jpg">
+  <div class="caption center-align">
+  <h3>This is our big Tagline!</h3>
+  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+  </div>
   </li>
-      <% } %>
-    </ul>
+    <li>
+    <img src="https://pixabay.com/get/e834b50620f0003ed1534705fb0938c9bd22ffd41cb2184791f7c37bae/friends-1149841_1920.jpg">
+      <div class="caption left-align">
+      <h3>Left Aligned Caption</h3>
+      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </div>
+          </li>
+    <li>
+      <img src="https://pixabay.com/get/ea35b50d2ff1003ed1534705fb0938c9bd22ffd41cb2184791f7c07ca1/nature-3042751_1920.jpg">
+      <div class="caption right-align">
+        <h3>Right Aligned Caption</h3>
+    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col s12">
+  <h3> Lost Pets Near _____</h3>
+  <div class="divider"></div></div>
+  <div class="section">
+      <div class="col s7"><span class="flow-text">
+        <ul = "list-unstyled">
+          <div class="row">
+          <%for (let i=0; i < 3; i++) {%>
+            <li class = "media">
+            <a href = "/pets/<%=pets[i].id%>">
+              <img class = "mr-3" src = "<%=pets[i].img%>" width =200px><br>
+              <%= pets[i].name%><br>
+
+                </a>
+                </li>
+                  <% } %>
+                </ul>
+
+      </span></div>
+      <div class="col s5"><span class="flow-text">
+        <div class= "buttoncontainer">
+          <div class = "row"><button class = "btn btn-default" href = "/pets/dogs">See all Dogs</button></div>
+          <div class = "row"><button class = "btn btn-default" href = "/pets/cats">See all Cats</button></div>
+          <div class = "row"><button class = "btn btn-default" href = "/pets/all">See all Pets</button></div>
+        </div>
+      </span></div></div>
+    </div>
+  </div>
+</div>
+
+
   </body>
 </html>

@@ -62,7 +62,7 @@ const userController = require('./controllers/users.js')
 app.use('/users', userController)
 
 const petsController = require('./controllers/pets')
-app.use('/pets', petsController)
+app.use('/', petsController)
 
 // const Pet = require('./models/pets')
 // app.get('/pets', (req, res)=> {
@@ -70,7 +70,7 @@ app.use('/pets', petsController)
 //     currentUser: req.session.currentUser,
 //   })
 // })
-
+//
 
 //
 // pets.get('/', (req, res)=> {

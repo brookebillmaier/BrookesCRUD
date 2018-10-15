@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ./partials/head.ejs %>
+    <title>Submit Lost Pet</title>
   </head>
   <body>
-    Submit a Lost Pet
-  <form action = "/pets" method = "POST">
+  <h1>  Submit a Lost Pet</h1>
+  <form action = "/pets/all" method = "POST">
     Name: <input type = "text" name = "name"/><br>
     Missing: <input type = "date" name = "missing"/><br>
-    Image: <input type = "image" name = "img"/><br>
+    Image: <input type = "text" name = "img"/><br>
     About: <input type = "text" name = "about"/><br>
+    Type: <input type = "text" name = "type"/><br>
     Alert local area via email:<input type = "checkbox" name = "alert"/>
     Alert local area via text:<input type = "checkbox" name = "alert"/>
     <input type = "submit" value = "Create Pet">

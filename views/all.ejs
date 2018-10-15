@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ./partials/head.ejs %>
+    <meta charset="utf-8">
+    <title>FindMe</title>
+  </head>
+  <body>
+    <%for (let i=0; i < pets.length; i++) {%>
+    <a href = "/pets/<%=pets[i].id%>">
+    <%= pets[i].name%><br>
+    <img class = "mr-3" src = "<%=pets[i].img%>">
+    </a>
+  </li>
+      <% } %>
+    </ul>
+  </body>
+</html>

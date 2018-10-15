@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ./partials/head.ejs %>
+    <title> Edit <%=pets.name%></title>
   </head>
   <body>
     <!DOCTYPE html>
@@ -13,7 +13,7 @@
       </head>
       <body>
         Edit a Lost Pet
-        <form action = "/pets" method = "POST">
+        <form action = "/pets/all" method = "POST">
           Name: <input type = "text" name = "name" value = "<%=pets.name%>"/><br>
           Missing: <input type = "date" name = "missing" value = "<%=pets.missing%>"/><br>
           Image: <input type = "image" name = "img" placeholder = "<%=pets.img%>"/><br>

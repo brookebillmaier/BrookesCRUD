@@ -2,9 +2,10 @@ const express = require('express')
 const router = express.Router()
 const app = express ()
 const Pet = require('../models/pets.js')
+const petSeeds = require('../models/seed.js')
 
 
-router.get('/', (req, res)=> {
+router.get('/pets', (req, res)=> {
   Pet.find({}, (error, allPets)=> {
     res.render('index.ejs', {
       pets: allPets,
@@ -14,37 +15,56 @@ router.get('/', (req, res)=> {
 })
 
 
+router.get('/pets/all', (req, res)=> {
+  Pet.find({}, (error, allPets)=> {
+    res.render('all.ejs', {
+      pets: allPets,
+      currentUser: req.session.currentUser,
+    })
+  })
+})
 
-//
-// //index: get
-// router.get('/', (req, res)=> {
-//   Pet.find({}, (err, pets)=> {
-//     if(err){console.log(err);}
-//     res.render('/index.ejs')
-//   })
-// })
+router.get('/pets/dogs', (req, res)=> {
+  Pet.find({type: "dog"}, (error, allDogs)=> {
+    res.render('dogs.ejs', {
+      dogs: allDogs,
+      currentUser: req.session.currentUser,
+    })
+  })
+})
+
+router.get('/pets/cats', (req, res)=> {
+  Pet.find({type: "cat"}, (error, allCats)=> {
+    res.render('cats.ejs', {
+      cats: allCats,
+      currentUser: req.session.currentUser,
+    })
+  })
+})
 
 
 
 //new: get
-router.get('/new', (req, res)=> {
-  res.render('new.ejs')
+router.get('/pets/new', (req, res)=> {
+  res.render('new.ejs',
+{currentUser: req.session.currentUser})
 })
 
 
 
 // Get - show
-router.get('/:id', (req, res)=> {
-  Pet.findById(req.params.id, (err, foundPet)=> {
+router.get('/pets/:id', (req, res)=> {
+  Pet.findById(req.params.id, (err, pets)=> {
     res.render('show.ejs', {
-      pets: foundPet})
+      pets: pets,
+      currentUser: req.session.currentUser})
   })
 })
 
 
 //POST - create
 // '/pets'
-router.post('/', (req, res)=> {
+router.post('/pets/all', (req, res)=> {
   Pet.create(req.body, (err, pet)=> {
     if(err){res.send (err)}
     else {
@@ -54,23 +74,20 @@ router.post('/', (req, res)=> {
 })
 
 
-
-
-
-
 //Get - edit
 // '/pets/:id/edit'
-router.get('/:id/edit', (req, res)=> {
+router.get('/pets/:id/edit', (req, res)=> {
   Pet.findById(req.params.id, (err, pets)=> {
     if(err) {console.log(errs)}
-    res.render('edit.ejs', {pets:pets})
+    res.render('edit.ejs', {pets:pets,
+    currentUser: req.session.currentUser})
   })
 })
 
 
 //Patch/PUT - Update
 // '/pets/:id'
-router.put('/:id', (req, res)=> {
+router.put('/pets/:id', (req, res)=> {
   Pet.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, pet)=> { if (err) {console.log(err);}
   res.redirect('/pets/' + pet.id)
   })
@@ -81,19 +98,19 @@ router.put('/:id', (req, res)=> {
 
 //DELETE - Destroy
 // '/pets/:id'
-router.delete('/:id', (req, res)=> {
+router.delete('/pets/:id', (req, res)=> {
   Pet.findByIdAndRemove(req.params.id, (err, pets)=> {
     if(err){console.log(err)}
     res.redirect('/pets')
   })
 })
 
-
-const petSeeds = require('../models/seed.js')
-router.get('/seed/newpets', (req, res)=> {
+router.get('/seed', (req, res)=> {
   Pet.insertMany(petSeeds, (err, pets)=> {
     if(err) {console.log(err); } else {
-      res.send(pets)
+      res.redirect('/pets');
+      res.send(pets, {pets: pets});
+
     }
   })
 })
@@ -108,22 +125,16 @@ router.get('/seed/newpets', (req, res)=> {
 
 
 //
-router.get('/seed/newpets', (req, res)=> {
-  const newPets = [
-      {
-    _id: "58e913abb7304c0e0f20d0d8",
-    name: "Beans",
-    about: "A small pile of beans. Buy more beans for a big pile of beans.",
-    img: "http://www.rodalesorganiclife.com/sites/rodalesorganiclife.com/files/styles/slideshow-desktop/public/navybeans_peangdao_1100.jpg?itok=QB7fl971",
-    missing: "september"
-    },
-    ]
-  Pet.create(newPets, (err, pet)=> {
-    if(err) {console.log(err); }
-    console.log('SEED: NEW PETS ADDED')
-    res.redirect('/pets')
-  })
-  })
+// router.get('/seed', (req, res)=> {
+//   const newPets = [
+//
+//     ]
+//   Pet.create(newPets, (err, pet)=> {
+//     if(err) {console.log(err); }
+//     console.log('SEED: NEW PETS ADDED')
+//     res.redirect('/pets')
+//   })
+//   })
 
 
 module.exports = router
