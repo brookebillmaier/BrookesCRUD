@@ -37,7 +37,7 @@ router.get('/new', (req, res)=> {
 router.get('/:id', (req, res)=> {
   Pet.findById(req.params.id, (err, foundPet)=> {
     res.render('show.ejs', {
-      pet: foundPet})
+      pets: foundPet})
   })
 })
 
@@ -61,9 +61,9 @@ router.post('/', (req, res)=> {
 //Get - edit
 // '/pets/:id/edit'
 router.get('/:id/edit', (req, res)=> {
-  Pet.findByID(req.params.id, (err, pet)=> {
-    if(err) {console.log(err)}
-    res.render('edit.js', {pet:pet})
+  Pet.findById(req.params.id, (err, pets)=> {
+    if(err) {console.log(errs)}
+    res.render('edit.ejs', {pets:pets})
   })
 })
 
@@ -80,11 +80,11 @@ router.put('/:id', (req, res)=> {
 
 
 //DELETE - Destroy
-// '/photos/:id'
+// '/pets/:id'
 router.delete('/:id', (req, res)=> {
-  Pet.findByIdAndRemove(req.params.id, (err, pet)=> {
+  Pet.findByIdAndRemove(req.params.id, (err, pets)=> {
     if(err){console.log(err)}
-    res.redirect('/')
+    res.redirect('/pets')
   })
 })
 

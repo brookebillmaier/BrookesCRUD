@@ -5,8 +5,16 @@
     <title></title>
   </head>
   <body>
-
-    this is the create a new pet page
+    Submit a Lost Pet
+  <form action = "/pets" method = "POST">
+    Name: <input type = "text" name = "name"/><br>
+    Missing: <input type = "date" name = "missing"/><br>
+    Image: <input type = "image" name = "img"/><br>
+    About: <input type = "text" name = "about"/><br>
+    Alert local area via email:<input type = "checkbox" name = "alert"/>
+    Alert local area via text:<input type = "checkbox" name = "alert"/>
+    <input type = "submit" value = "Create Pet">
+  </form>
 
   </body>
 </html>

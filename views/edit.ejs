@@ -5,8 +5,27 @@
     <title></title>
   </head>
   <body>
-    this page allows you to edit the individual animal
+    <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title></title>
+      </head>
+      <body>
+        Edit a Lost Pet
+        <form action = "/pets" method = "POST">
+          Name: <input type = "text" name = "name" value = "<%=pets.name%>"/><br>
+          Missing: <input type = "date" name = "missing" value = "<%=pets.missing%>"/><br>
+          Image: <input type = "image" name = "img" placeholder = "<%=pets.img%>"/><br>
+          About: <input type = "text" name = "about" value = "<%=pets.about%>"/><br>
+          Alert local area via email:<input type = "checkbox" name = "alert"/>
+          Alert local area via text: <input type = "checkbox" name = "alert"/>
+          <br>
+          <input type = "submit" value = "Submit">
+        </form>
 
-    
+      </body>
+    </html>
+
   </body>
 </html>

@@ -5,9 +5,12 @@ const petSchema = Schema({
   name: String,
   about: String,
   img: String,
-  missing: String,
-
+  missing: Date,
 })
+
+
+
+
 
 const Pet = mongoose.model('Pet', petSchema)
 
