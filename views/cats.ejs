@@ -2,18 +2,22 @@
 <html lang="en" dir="ltr">
   <head>
     <% include ./partials/head.ejs %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel = "stylesheet" href ="../css/all.css">
     <meta charset="utf-8">
     <title>All Lost Cats</title>
   </head>
   <body>
-
+  <div class = "container">
     <%for (let i=0; i < cats.length; i++) {%>
-  <li class = "media">
-    <a href = "/pets/<%=cats[i].id%>">
-    <%= cats[i].name%><br>
-    <img src = "<%=cats[i].img%>">
-    </a>
-  </li>
+      <div class="row"><ul>
+       <div class="col s3">
+    <li><a href = "/pets/<%=cats[i].id%>">
+    <img src = "<%=cats[i].img%>" width = "200px" class = "petimg"> <%= cats[i].name%><br>
+    </a></li>
+  </div>
+  </div>
+
       <% } %>
     </ul>
   </body>

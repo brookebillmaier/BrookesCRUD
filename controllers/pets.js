@@ -14,34 +14,33 @@ router.get('/pets', (req, res)=> {
   })
 })
 
-
 router.get('/pets/all', (req, res)=> {
-  Pet.find({}, (error, allPets)=> {
+  Pet.find({}, (error, pets)=> {
     res.render('all.ejs', {
-      pets: allPets,
+      pets: pets,
       currentUser: req.session.currentUser,
     })
   })
 })
 
+
 router.get('/pets/dogs', (req, res)=> {
-  Pet.find({type: "dog"}, (error, allDogs)=> {
+  Pet.find({type: "dog"}, (error, dogs)=> {
     res.render('dogs.ejs', {
-      dogs: allDogs,
+      dogs: dogs,
       currentUser: req.session.currentUser,
     })
   })
 })
 
 router.get('/pets/cats', (req, res)=> {
-  Pet.find({type: "cat"}, (error, allCats)=> {
+  Pet.find({type: "cat"}, (error, cats)=> {
     res.render('cats.ejs', {
-      cats: allCats,
+      cats: cats,
       currentUser: req.session.currentUser,
     })
   })
 })
-
 
 
 //new: get
@@ -50,17 +49,14 @@ router.get('/pets/new', (req, res)=> {
 {currentUser: req.session.currentUser})
 })
 
-
-
 // Get - show
 router.get('/pets/:id', (req, res)=> {
-  Pet.findById(req.params.id, (err, pets)=> {
+  Pet.findById(req.params.id, (err, showPets)=> {
     res.render('show.ejs', {
-      pets: pets,
+      pets: showPets,
       currentUser: req.session.currentUser})
   })
 })
-
 
 //POST - create
 // '/pets'
@@ -72,7 +68,6 @@ router.post('/pets/all', (req, res)=> {
     }
   })
 })
-
 
 //Get - edit
 // '/pets/:id/edit'
@@ -94,8 +89,6 @@ router.put('/pets/:id', (req, res)=> {
 })
 
 
-
-
 //DELETE - Destroy
 // '/pets/:id'
 router.delete('/pets/:id', (req, res)=> {
@@ -105,15 +98,18 @@ router.delete('/pets/:id', (req, res)=> {
   })
 })
 
-router.get('/seed', (req, res)=> {
-  Pet.insertMany(petSeeds, (err, pets)=> {
-    if(err) {console.log(err); } else {
-      res.redirect('/pets');
-      res.send(pets, {pets: pets});
 
-    }
-  })
+router.get('/seed', (req, res)=> {
+  Pet.create(petSeeds, (err, pets)=> {
+    console.log(pets);
+      res.redirect('/pets');
+
+    })
 })
+
+
+
+
 
 // pets.get('/pets/seed', (req, res)=> {
 //   Pet.insertMany(petSeeds, (err, pets)=> { if(err) {console.log(err)} else {

@@ -3,16 +3,22 @@
   <head>
     <% include ./partials/head.ejs %>
     <meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel = "stylesheet" href ="../css/all.css">
     <title>FindMe</title>
   </head>
   <body>
-    <%for (let i=0; i < pets.length; i++) {%>
-    <a href = "/pets/<%=pets[i].id%>">
-    <%= pets[i].name%><br>
-    <img class = "mr-3" src = "<%=pets[i].img%>">
-    </a>
-  </li>
-      <% } %>
-    </ul>
+    <div class = "container">
+   <% for (let i=0; i < pets.length; i++) {%>
+     <div class="row">
+      <div class="col s3">
+        <a href = "/pets/<%=pets[i].id%>">
+        <img src = "<%=pets[i].img%>" width = 200 class = "petimg"><br>
+        <%= pets[i].name%></a><br>
+      </div>
+      </div>
+</li>
+</ul>
+<% } %>
   </body>
 </html>
