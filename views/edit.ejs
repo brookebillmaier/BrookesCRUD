@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <% include ./partials/head.ejs %>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title> Edit <%=pets.name%></title>
   </head>
   <body>
@@ -18,8 +19,10 @@
           Missing: <input type = "date" name = "missing" value = "<%=pets.missing%>"/><br>
           Image: <input type = "image" name = "img" placeholder = "<%=pets.img%>"/><br>
           About: <input type = "text" name = "about" value = "<%=pets.about%>"/><br>
-          Alert local area via email:<input type = "checkbox" name = "alert"/>
-          Alert local area via text: <input type = "checkbox" name = "alert"/>
+          <label>
+      </label>
+          Alert local area via email:<input type = "checkbox" name = "alert" class="filled-in" checked="checked"/>
+          Alert local area via text: <input type = "checkbox" name = "alert" class="filled-in" checked="checked"/>
           <br>
           <input type = "submit" value = "Submit">
         </form>

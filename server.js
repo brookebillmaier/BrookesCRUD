@@ -9,6 +9,7 @@ const db = mongoose.connection;
 const session = require('express-session')
 const bodyParser = require('body-parser')
 const pets = express.Router()
+
 //const bcyrpt = require('bcrypt')
 //___________________
 //Port
@@ -64,6 +65,12 @@ app.use('/users', userController)
 const petsController = require('./controllers/pets')
 app.use('/', petsController)
 
+
+//listen
+app.listen(PORT, () => {
+  console.log('listening on port:', PORT)
+})
+
 // const Pet = require('./models/pets')
 // app.get('/pets', (req, res)=> {
 //   res.render('index.ejs', {
@@ -87,9 +94,3 @@ app.use('/', petsController)
 //     res.redirect('/')
 //     })
 //   })
-
-
-//listen
-app.listen(PORT, () => {
-  console.log('listening on port:', PORT)
-})

@@ -1,86 +1,110 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="/css/header.css">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+   <link rel="stylesheet" href="../css/header.css">
     <meta charset="utf-8">
   </head>
 
   <header>
+
+<!--Navbar  -->
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="/pets">FindMe</a>
         </div>
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<ul class="nav navbar-nav">
-<li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src = "http://downloadicons.net/sites/default/files/house-icon-80778.png" width= 30px/>Home<span class="caret"></span></a>
-  <ul class="dropdown-menu">
-         <li><a href = "/pets/all"> View All Pets</a></li>
-         <li><a href = "/pets/tips"> Lost Pet Tips</a></li>
-         <li role="separator" class="divider"></li>
-         <li><a href = "/pets/new"> New Lost Pet</a></li>
+  <ul class="nav navbar-nav">
+           <li><a href = "/pets/all"> View All Pets</a></li>
+           <li><a href = "/pets/new"> New Lost Pet</a></li>
+           <li><a href = "/pets/tips"> Lost Pet Tips</a></li>
              </ul>
-           </li>
-         </ul>
-
          <form class="navbar-form navbar-right">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
          <ul class="nav navbar-nav navbar-right">
-
-                   <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                       <div class = "login">
-                       <% if (currentUser) { %>
-                         <li>Welcome <%=currentUser.username%>!
-                         <li><form action="/sessions?_method=DELETE" method="POST">
-                             <input type="submit" value="Logout"/>
-                             </form>
-
-                       <span class="caret"></span></a>
-                     <ul class="dropdown-menu">
-                       <li><a href="#">Action</a></li>
-                       <li><a href="#">Another action</a></li>
-                       <li><a href="#">Something else here</a></li>
-                       <li role="separator" class="divider"></li>
-                       <li><a href="#">Separated link</a></li>
-                       <% } else {%>
-                           <li><a href = "/users/new"> Create Account</a>
-                           /
-                           <li><a href = "/sessions/new"> Log In</a>
+                  <div class = "login">
+              <% if (currentUser) { %>
+                    <li class = "welcome">Welcome <%=currentUser.username%>!
+                        <form action="/sessions?_method=DELETE" method="POST">
+                      <input type="submit" class="waves-effect waves-light btn" value="Logout"/>
+                      </form>
+              <% } else {%>
+                 <li><a class="waves-effect waves-light btn modal-trigger" href="/users/new"> Create Account / Log In</a>
                                   <%}%><br>
-                                  </div>
-
-
+                                  <!-- #modal1 -->
+                          </div>
                      </ul>
                    </li>
                  </ul>
-               </div><!-- /.navbar-collapse -->
-             </div><!-- /.container-fluid -->
+               </div>
+             </div>
            </nav>
+<!--end navbar  -->
 
 
 
 
+   <!-- modal -->
+      <div id="modal1" class="modal">
+             <div class="modal-content">
+    <!-- log in -->
+    <div class = "container">
+      <h1>Create New Account</h1>
+      <div class = "row">
+        <div class = "input-field">
+        <form action = '/users' method = 'POST'>
+          <label for"username">Username</label>
+          <input id = "username" type ="text" class = "validate" name = "username" require>
+        </div></div>
+        <div class = "row">
+          <div class = "input field">
+            <label for ="password">Password</label>
+            <input type = "password" class ="validate" name = "password" required>
+          </div>
+        </div>
+        <button type = "submit" name ="action"> Submit</button>
+      </form>
+    </div>
 
 
 
 
+<!-- create new account -->
+    <div class = "container">
+      <h1>Log In</h1>
+      <div class = "row">
+        <div class = "input-field">
+        <form action = '/sessions' method = 'POST'>
+          <label for"username">Username</label>
+          <input id = "username" type ="text" class = "validate" name = "username" require>
+        </div></div>
+        <div class = "row">
+          <div class = "input field">
+            <label for ="password">Password</label>
+            <input type = "password" class ="validate" name = "password" required>
+          </div>
+        </div>
+        <button type = "submit" name ="action"> Submit</button>
+      </form>
+    </div>
 
-
+</div>
+</div>
 </nav>
 </header>
+</html>
+
+<script>
+$(document).ready(function(){
+
+    $('.modal').modal();
+})
+
+</script>
+
+
+  </body>
 </html>
