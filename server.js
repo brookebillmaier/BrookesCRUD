@@ -68,7 +68,6 @@ app.use('/', petsController)
 
 app.get('/', (req, res)=> {
   res.redirect('/pets')
-  }
 })
 
 //listen
