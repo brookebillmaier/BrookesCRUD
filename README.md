@@ -13,7 +13,7 @@ The approach in making this app is focused on displaying the pets in an easy to 
 This app was created with HTML, CSS, Javascript, and some jQuery. It also utilizes Express, Mongoose, MongodDB, Node.js EJS Express-Session and Method-Override. In the future, Passport will implimented as well to automatically log the user in upon creating an account. 
 
 ## Future Goals ##
-Another feature that should be implemented in the future is the ability to contact users via email or text when a pet is lost in their area. Messaging within the app is an important feature that will need to be built upon as well. One bug that has yet to be fixed is the logout button does not work. 
+Another feature that should be implemented in the future is the ability to contact users via email or text when a pet is lost in their area. Bcrypt will also need to be implemented in the future. Messaging within the app is an important feature that will need to be built upon as well. One bug that has yet to be fixed is the logout button does not work. 
 
 In the future, I would also like to implement tips on finding a lost pet and possibly a blog for others to share their tips on pets overall. I could also see this page changing completely to an adoption service rather than a lost pets page, which could allow more users to sign up and see use in the functionality. 
 
