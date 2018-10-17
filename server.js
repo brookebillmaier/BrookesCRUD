@@ -67,7 +67,7 @@ app.use('/', petsController)
 
 
 app.get('/', (req, res)=> {
-  res.send('/pets')
+  res.redirect('/pets')
 })
 
 //listen
