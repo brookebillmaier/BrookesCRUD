@@ -1,14 +1,14 @@
 let seedPets = [
   {
     name: 'Nugget',
-    about: 'Tri-color rat terrier mix. Likes running fast and eating treats. Usually comes when called.',
+    about: 'Tri-color Rat Terrier mix. Likes running fast and pretending he\'s a cat.',
     img: "https://i.postimg.cc/T2nwbLxh/IMG-0897.jpgresize=width:200,height:250,fit:crop",
     missing: 'October 8, 2018',
     type: 'dog',
   },
   {
     name: 'Peach',
-    about: 'Black/White Female Pit Bull Terrier Mix. Medium size. She is about 4 years old and loves to run and play. She usually comes when you call her name and is very friendly.',
+    about: 'Black/White Female Pit Bull Terrier Mix. Medium size. She is about 4 years old and loves to run and play. She usually comes when you call her name and is very friendly. ',
     img: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/42601452/1/?bust=1535575929resize=width:200,height:250,fit:crop",
     missing: 'October 8, 2018',
     type: 'dog',
@@ -22,7 +22,7 @@ let seedPets = [
   },
   {
     name: 'Fred',
-    about: 'Fred has been missing for quite a while. If anyone has seen him please send me a message. ',
+    about: 'Fred has been missing for quite a while. If anyone has seen him please send me a message. Doggo ipsum heckin good boys adorable doggo borkdrive shoob porgo, shoober puggorino. ',
     img: 'https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/42841229/1/?bust=1537813738resize=width:200,height:250,fit:crop',
     missing: 'October 4, 2018',
     type: 'dog',
@@ -50,8 +50,8 @@ let seedPets = [
   },
   {
     name: 'Tiger',
-    about: 'Kitten - Male - Medium - Gray & White -- Cat ipsum dolor sit amet, bite off human\'s toes so i\'m bored inside, let me out, Ignore the squirrels, you\'ll never catch them anyway allways wanting food a nice warm laptop for me to sit on',
-    img: 'https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/42721567/1/?bust=1536620730resize=width:200,height:250,fit:crop',
+    about: 'Kitten - Male - Medium - Black & White -- Cat ipsum dolor sit amet, bite off human\'s toes so i\'m bored inside, let me out, Ignore the squirrels, you\'ll never catch them anyway allways wanting food a nice warm laptop for me to sit on',
+    img: 'https://i.postimg.cc/T3885WB1/Screen-Shot-2018-10-17-at-6-41-36-PM.pngresize=width:200,height:250,fit:crop',
     missing: 'October 10, 2018',
     type: 'cat',
   },
@@ -76,6 +76,31 @@ let seedPets = [
     missing: 'October 14, 2018',
     type: 'cat',
   },
+  {
+    name: 'June',
+    about: 'Coonhound - Doggo ipsum woofer you are doin me a concern pats. Dat tungg tho tungg noodle horse heckin angery woofer floofs most angery pupper I have ever seen, blep what a nice floof most angery pupper',
+    img: 'https://cdn1.imggmi.com/uploads/2018/10/18/ce193be5bbab0b341c68f6e0f485f5b8-full.pngresize=width:200,height:250,fit:cro',
+    missing: 'October 16, 2018',
+    type: 'dog',
+  },
+  {
+    name: 'Lil Guy',
+    about: 'Boxer - Doggo Ipsum boof h*ck tungg heck dat tungg tho heck woofer doing me a frighten fat boi, porgo shibe long bois lotsa pats ur givin me a spook wrinkler. Borking lotsa pats shoob doggorino borkf, stop it fren. Doge fat boi shoob. ',
+    img: 'https://cdn1.imggmi.com/uploads/2018/10/18/2e1ab4abb697ec680c0a7554bfea5559-full.pngresize=width:200,height:250,fit:cro',
+    missing: 'October 14, 2018',
+    type: 'dog',
+  },
+  {
+    name: 'Spice',
+    about: 'Domestic Shorthair - Cat ipsum dolor sit amet, himalayan kitten so cougar. Tabby donskoy. Tom donskoy for devonshire rex siamese, tomcat maine coon burmese. Tiger british shorthair turkish angora, bobcat savannah so ragdoll. Kitten. Tiger jaguar scottish fold yet tomcat. ',
+    img: 'https://cdn1.imggmi.com/uploads/2018/10/18/98908bffaa704ba87b1a3ec1b48c5575-full.pngresize=width:200,height:250,fit:cro',
+    missing: 'October 14, 2018',
+    type: 'dog',
+  },
+
+
+
+
 
 
 
