@@ -16,13 +16,17 @@
 }
 
 .brand {
-  margin-top: -5px;
+  margin-top: -10px;
+  padding-top: 5px;
+  position: absolute;
+  top: 5px;
 }
  #login {
    margin-top: -20px;
  }
  #logout {
-   margin: -20px 10px 0 10px;
+   margin-top: -20px;
+   margin-bottom: 20px;
  }
  .material-icons {
    color: darkgray;
@@ -33,5 +37,5 @@
  .welcome {
    color: black;
    padding: 0 20px 0 20px;;
-   margin: -10px 15px 0 15px;
+   margin: -10px 10px 0 15px;
  }

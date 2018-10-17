@@ -2,19 +2,37 @@
 <html lang="en" dir="ltr">
   <head>
     <% include ./partials/head.ejs %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel = "stylesheet" href ="../css/index.css">
     <meta charset="utf-8">
-    <title>All Lost Dogs</title>
+    <title>FindMeFido</title>
   </head>
   <body>
-
+    <center>
+    <div class = "col s12"><div class = "row"><h3> Lost Dogs Near Chicago, IL</h3>
+    <div class="divider"></div></div></div>
+    <div class ='container'>
+    <div class="section">
+        <div class="col s7"><span class="flow-text">
+          <ul = "list-unstyled">
+            <div class="row">
     <%for (let i=0; i < dogs.length; i++) {%>
   <li class = "media">
-    <a href = "/pets/<%=dogs[i].id%>">
-    <%= dogs[i].name%><br>
-    <img src = "<%=dogs[i].img%>">
+    <div class = "card-panel teal lighten-2">
+    <div class = "child">
+    <a href = "/pets/<%=dogs[i].id%>" id = "name">
+    <img src = "<%=dogs[i].img%>" class = "petimg" width="200px"><br>
+    <%= dogs[i].name%>
     </a>
+
   </li>
       <% } %>
     </ul>
+      </center>
+  </span></div></div></div>
   </body>
+  <footer>
+  <% include ./partials/footer.ejs %>
+
+  </footer>
 </html>

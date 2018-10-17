@@ -18,11 +18,10 @@ sessions.post('/', (req, res)=>{
     });
 });
 
-sessions.delete('/delete', (req, res)=>{
+sessions.delete('/', (req, res)=>{
     req.session.destroy(() => {
-        res.redirect('/pets')
+        res.redirect('/')
     })
 })
-
 
 module.exports = sessions

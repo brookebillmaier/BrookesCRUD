@@ -4,21 +4,43 @@
     <% include ./partials/head.ejs %>
     <meta charset="utf-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel = "stylesheet" href ="../css/all.css">
+    <link rel = "stylesheet" href ="../css/index.css">
     <title>FindMe</title>
   </head>
   <body>
-    <div class = "container">
-   <% for (let i=0; i < pets.length; i++) {%>
-     <div class="row">
-      <div class="col s3">
-        <a href = "/pets/<%=pets[i].id%>">
-        <img src = "<%=pets[i].img%>" width = 200 class = "petimg"><br>
-        <%= pets[i].name%></a><br>
-      </div>
-      </div>
-</li>
+    <center>
+    <div class = "col s12"><div class = "row"><h3> Lost Pets Near Chicago, IL</h3>
+    <div class="divider"></div></div></div>
+
+  <div class ='container'>
+    <div class="section">
+        <div class="col s7"><span class="flow-text">
+          <ul = "list-unstyled">
+            <div class="row">
+           <% for (let i=0; i < pets.length; i++) {%>
+              <li class = "media">
+                <div class = "card-panel teal lighten-2">
+                <div class = "child">
+              <a href = "/pets/<%=pets[i].id%>" id = "name">
+                <img src = "<%=pets[i].img%>" class = "petimg" width =200px><br>
+                <%= pets[i].name%><br>
+              </div>
+                  </a>
+                  </li>
+    <% } %>
 </ul>
-<% } %>
+  </div>
+</div>
+</div>
+</div>
+</span></div>
+  </center>
   </body>
+
+
+
+    <footer>
+    <% include ./partials/footer.ejs %>
+
+    </footer>
 </html>

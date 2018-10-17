@@ -2,19 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
     <% include ./partials/head.ejs %>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel = "stylesheet" href ="./css/new.css">
+  <link rel = "stylesheet" href ="./css/new.css">
     <title> Edit <%=pets.name%></title>
   </head>
   <body>
-    <!DOCTYPE html>
-    <html lang="en" dir="ltr">
-      <head>
-        <meta charset="utf-8">
-        <title></title>
-      </head>
-      <body>
           <h1> <center> Edit a Lost Pet</h1></center>
         <div class = "container">
         <form action = "/pets/all" method = "POST">
@@ -30,10 +22,21 @@
           <i class="material-icons right">send</i>
           </button>
 
-        </form>
-
+        </form><br>
+</div>
+<br>
       </body>
     </html>
 
-  </body>
+  <footer>
+  <% include ./partials/footer.ejs %>
+
+  </footer>
+
+<style>
+.brand {
+  top: 0;
+  margin-top: 0;
+}
+</style>
 </html>

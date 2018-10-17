@@ -4,29 +4,41 @@
     <% include ./partials/head.ejs %>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <link rel = "stylesheet" href ="./css/show.css">
+      <link rel = "stylesheet" href ="../css/show.css">
   </head>
   <body>
-      <%=pets.name%> <br>
-    <img src = "<%=pets.img%>" width = 400px><br>
-    <% var months = ["January", "February", "March",
-      "April", "May", "June", "July",
-      "August", "September", "October",
-      "November", "December"]; %>
-      <% var day = pets.missing.getDate();%>
-      <% var month = months[pets.missing.getMonth()]%>
-      <% var year = pets.missing.getFullYear();%>
-    Missing Since:  <%= month + ' ' + day + ', ' + year %><br>
-    <%=pets.about%>
-
-    
-
-<form action = '/pets/<%=pets.id%>?_method=DELETE' method = "POST">
-  <input type = "submit" value = "Delete">
-</form>
-
-<a href ="/pets/<%=pets.id%>/edit">Edit</a>
-  <a href = '/pets/'>Home</a>
-
+<center>
+    <div class="card">
+       <div class="card-image waves-effect waves-block waves-light">
+          <img src = "<%=pets.img%>" class = "activator"><br>
+       </div>
+       <div class="card-content">
+         <span class="card-title activator grey-text text-darken-4"><h1><%=pets.name%> <i class="material-icons right">more_vert</i></span></h1>
+       </div>
+       <div class="card-reveal">
+         <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+         <h1><%=pets.name%></h1>
+         <% var months = ["January", "February", "March",
+           "April", "May", "June", "July",
+           "August", "September", "October",
+           "November", "December"]; %>
+           <% var day = pets.missing.getDate();%>
+           <% var month = months[pets.missing.getMonth()]%>
+           <% var year = pets.missing.getFullYear();%>
+         <h5>Missing Since:<br><%= month + ' ' + day + ', ' + year %></h5><br>
+         <p><%=pets.about%></p>
+         <a href = "/pets/<%=pets.id%>/edit" class = "waves-effect waves-light btn btn-large">Edit</a>
+         <form action = '/pets/<%=pets.id%>?_method=DELETE' method = "POST" class = "waves-effect waves-light btn btn-large">
+           <input type = "submit" value = "Delete">
+         </form><br><br>
+         <a href = "/pets/" class = "waves-effect waves-light btn btn-large">Message</a>
+       </div>
+     </div>
+</center>
+</span>
   </body>
+  <footer>
+  <% include ./partials/footer.ejs %>
+
+  </footer>
 </html>

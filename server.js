@@ -9,7 +9,7 @@ const db = mongoose.connection;
 const session = require('express-session')
 const bodyParser = require('body-parser')
 const pets = express.Router()
-//const bcyrpt = require('bcrypt')
+const bcyrpt = require('bcrypt')
 //___________________
 //Port
 //___________________

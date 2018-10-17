@@ -25,7 +25,9 @@ a:link#name  {
 }
 
 a:visited#name {
+  text-transform: uppercase;
   text-decoration: none;
+  color: white;
 }
 
 
@@ -35,6 +37,7 @@ a:visited#name {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+
 }
 .media {
   display: inline-block;

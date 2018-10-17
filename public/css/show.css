@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+.btncontainer {
+
+}
+.card {
+  width: 30%;
+  border: 1px solid black;
+  box-shadow: .02em .02em 2em black;
+  /* margin-top: -50px; */
+}
+.card-content {
+  margin-top: -50px;
+}
+.petimg {
+  border: 1px solid black;
+}

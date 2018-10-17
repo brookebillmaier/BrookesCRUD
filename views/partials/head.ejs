@@ -7,6 +7,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
    <link rel="stylesheet" href="../css/header.css">
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://image.ibb.co/dT4Xt0/58aeffaac869e092af51ee73.png" type="image/x-icon">
   </head>
 
   <header>
@@ -15,17 +16,17 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/pets"><img src = "http://funkyimg.com/i/2Mafd.png" height="40" class = "brand"></a>
+          <a class="navbar-brand" href="/pets"><img src = "http://funkyimg.com/i/2Mafd.png" height="60" width = "260" class = "brand"></a>
         </div>
         <form class="navbar-form navbar-right">
         <ul class="nav navbar-nav navbar-right">
                  <div class = "login">
              <% if (currentUser) { %>
                    <li class = "welcome">Welcome <%=currentUser.username%>!
-                       <form action="sessions/delete?_method=DELETE" method="POST">
-                     <input type="submit" class="waves-effect waves-light btn" value="Logout" id ="logout"/>
-                     </form>
-             <% } else {%>
+  <form action="/sessions?_method=DELETE" method="POST">
+  <input type="submit" value="Logout" class="waves-effect waves-light btn"/>
+  </form>
+      <% } else {%>
                 <li><a class="waves-effect waves-light btn modal-trigger" id = "login" href="#modal1"> Create Account / Log In</a>
                                  <%}%><br>
                                  <!-- /users/new  -->
@@ -95,13 +96,9 @@
 </div>
 </div>
 </nav>
-
-
-
-
-
 </header>
-</html>
+<body>
+</body>
 
 <script>
 $(document).ready(function(){
@@ -110,7 +107,4 @@ $(document).ready(function(){
 })
 
 </script>
-
-
-  </body>
 </html>

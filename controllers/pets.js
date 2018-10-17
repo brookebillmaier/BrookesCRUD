@@ -109,7 +109,10 @@ router.get('/seed', (req, res)=> {
     })
 })
 
-
+router.get('/dropdatabase/areyousure', ( req , res ) => {
+  Pet.collection.drop();
+  res.send( 'You did it! You dropped the database!' );
+});
 
 
 
