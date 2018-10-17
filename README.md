@@ -20,5 +20,6 @@ In the future, I would also like to implement tips on finding a lost pet and pos
 ## Credits ##
 Materializecss.com -- Materialize was a huge help in creating uniformity across my pages and shortened style time.
 Pixabay.com -- Slider images are from Pixabay. 
+
 Fruits / Kingsman Auth class notes were a huge help for CRUD and database seeding.
 
