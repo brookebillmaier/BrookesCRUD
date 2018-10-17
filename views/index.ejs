@@ -12,31 +12,31 @@
 <div class="slider">
   <ul class="slides">
     <li>
-      <img src="https://pixabay.com/get/eb31b30a29f6003ed1534705fb0938c9bd22ffd41cb2184791f7c178a4/men-2425121_1920.jpg">
+      <img src="https://cdn1.imggmi.com/uploads/2018/10/17/93b814599acc6ebafc520cedc1ba7602-full.jpg">
       <div class="caption center-align">
-        <h3>This is our big Tagline!</h3>
-        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        <h3>Welcome to FindMeFido!</h3>
+        <h5 class="light grey-text text-lighten-3">Keep an eye out for lost pets in your area with text or email alerts.</h5>
       </div>
     </li>
     <li>
     <img src="https://pixabay.com/get/e83db40f2cf2043ed1534705fb0938c9bd22ffd41cb2184695f7c270a2/adorable-1850465_1920.jpg">
       <div class="caption left-align">
       <h3>Send out alerts to those in your area</h3>
-      <h5 class="light grey-text text-lighten-3">Find your furry friends fast</h5>
+      <h5 class="light grey-text text-lighten-3"><i>Find your furry friends fast!</i></h5>
             </div>
           </li>
     <li>
       <img src="https://pixabay.com/get/eb33b1092ff1083ed1534705fb0938c9bd22ffd41cb2184695f7c57caf/dog-2606759_1920.jpg">
       <div class="caption right-align">
-        <h3>Right Aligned Caption</h3>
-    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        <h3>Post Your Lost Pet Now</h3>
+    <h5 class="light grey-text text-lighten-3">Be seen by thousands in your area.</h5>
             </div>
           </li>
         </ul>
 </div>
 
   <center>
-  <div class = "col s12"><div class = "row"><h3> Lost Pets Near </h3>
+  <div class = "col s12"><div class = "row"><h3> Lost Pets Near Chicago, IL</h3>
   <div class="divider"></div></div></div>
 </center>
 <div class ='container'>
@@ -46,8 +46,9 @@
           <div class="row">
           <%for (let i=0; i < 3; i++) {%>
             <li class = "media">
+              <div class = "card-panel teal lighten-2">
               <div class = "child">
-            <a href = "/pets/<%=pets[i].id%>">
+            <a href = "/pets/<%=pets[i].id%>" id = "name">
               <img src = "<%=pets[i].img%>" class = "petimg" width =200px><br>
               <%= pets[i].name%><br>
             </div>
@@ -59,18 +60,24 @@
       </span></div>
       <div class="col s5"><span class="flow-text">
         <div class= "buttoncontainer">
-          <div class = "row"><button href = "/pets/dogs" class = "btn btn-default" >See all Dogs</button></div>
-          <div class = "row"><button class = "btn btn-default" href = "/pets/cats">See all Cats</button></div>
-          <div class = "row"><button href = "/pets/all"class = "btn btn-default" >See all Pets</button></a></div>
+          <div class = "row"><a href = "/pets/dogs" class = "waves-effect waves-light btn btn-large">See all Dogs</a></div>
+          <div class = "row"><a href = "/pets/cats" class = "waves-effect waves-light btn btn-large">See all Cats</a></div>
+          <div class = "row"><a href = "/pets/all" class = "waves-effect waves-light btn btn-large" >See all Pets</a></div>
         </div>
       </span></div></div>
     </div>
   </div>
 </div>
+<footer>
+
+
+</footer>
+
 <Script>
 $(document).ready(function(){
    $('.slider').slider();
  });
+
  </script>
 
   </body>

@@ -1,16 +1,34 @@
 
 h5 {
   align: center;
+  text-shadow: .03em .03em .03em black;
+}
+h3 {
+  /* text-shadow: .03em .03em .03em black; */
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .divider {
   margin-bottom: 10px;
 }
 img.petimg {
-  border: 1px solid black;
+  border: 1px solid #447C7C;
   width: 200px;
   height: 250px;
 }
+
+a:link#name  {
+  text-transform: uppercase;
+  margin-top: 15px;
+  color: white;
+
+}
+
+a:visited#name {
+  text-decoration: none;
+}
+
+
 .container {
     width: 100%;
     display: flex;

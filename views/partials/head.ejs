@@ -17,27 +17,30 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/pets"><img src = "http://funkyimg.com/i/2Mafd.png" height="40" class = "brand"></a>
         </div>
+        <form class="navbar-form navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+                 <div class = "login">
+             <% if (currentUser) { %>
+                   <li class = "welcome">Welcome <%=currentUser.username%>!
+                       <form action="sessions/delete?_method=DELETE" method="POST">
+                     <input type="submit" class="waves-effect waves-light btn" value="Logout" id ="logout"/>
+                     </form>
+             <% } else {%>
+                <li><a class="waves-effect waves-light btn modal-trigger" id = "login" href="#modal1"> Create Account / Log In</a>
+                                 <%}%><br>
+                                 <!-- /users/new  -->
+                         </div>
+                       </form>
+                    </ul>
+                  </li>
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-  <ul class="nav navbar-nav">
+  <ul class="nav navbar-nav right">
            <li class = "link"><a href = "/pets/all"> View All Pets</a></li>
-           <li class = "link"><a href = "/pets/new"> Lost Pet?</a></li>
-          </ul>
-         <form class="navbar-form navbar-right">
-         <ul class="nav navbar-nav navbar-right">
-                  <div class = "login">
-              <% if (currentUser) { %>
-                    <li class = "welcome">Welcome <%=currentUser.username%>!
-                        <form action="/sessions?_method=DELETE" method="POST">
-                      <input type="submit" class="waves-effect waves-light btn" value="Logout"/>
-                      </form>
-              <% } else {%>
-                 <li><a class="waves-effect waves-light btn modal-trigger" id = "login" href="/users/new"> Create Account / Log In</a>
-                                  <%}%><br>
-                                  <!-- #modal1 -->
-                          </div>
-                     </ul>
-                   </li>
-                 </ul>
+           <li class = "link"><a href = "/pets/new"> Lost A Pet?</a></li>
+          <%if (currentUser) {%>
+            <i class="material-icons"> email</i>
+          <% } %>
+        </ul>
                </div>
              </div>
            </nav>
@@ -49,68 +52,53 @@
    <!-- modal -->
       <div id="modal1" class="modal">
              <div class="modal-content">
-    <!-- log in -->
-    <div class = "container">
-      <h1>Create New Account</h1>
+    <!-- create account -->
+      <h5>Create Account</h5>
       <div class = "row">
-        <div class = "input-field">
+        <div class = "input-field col s6" id ="left">
         <form action = '/users' method = 'POST'>
           <label for"username">Username</label>
           <input id = "username" type ="text" class = "validate" name = "username" require>
         </div></div>
         <div class = "row">
-          <div class = "input field">
+          <div class = "input field col s6">
             <label for ="password">Password</label>
             <input type = "password" class ="validate" name = "password" required>
           </div>
         </div>
-        <button type = "submit" name ="action"> Submit</button>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+
       </form>
-    </div>
 
+<!-- log in  -->
 
-
-
-<!-- create new account -->
-    <div class = "container">
-      <h1>Log In</h1>
       <div class = "row">
-        <div class = "input-field">
+        <h5>Log In</h5>
+        <div class = "input-field col s6" id = "right">
         <form action = '/sessions' method = 'POST'>
           <label for"username">Username</label>
           <input id = "username" type ="text" class = "validate" name = "username" require>
         </div></div>
         <div class = "row">
-          <div class = "input field">
+          <div class = "input field col s6">
             <label for ="password">Password</label>
             <input type = "password" class ="validate" name = "password" required>
           </div>
         </div>
-        <button type = "submit" name ="action"> Submit</button>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i></button>
       </form>
     </div>
-
+</div>
 </div>
 </div>
 </nav>
 
 
 
-<footer>
 
-  <!-- Element Showed -->
-  <a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">menu</i></a>
-
-  <!-- Tap Target Structure -->
-  <div class="tap-target" data-target="menu">
-    <div class="tap-target-content">
-      <h5>Title</h5>
-      <p>A bunch of text</p>
-    </div>
-  </div>
-
-
-</footer>
 
 </header>
 </html>
@@ -120,10 +108,7 @@ $(document).ready(function(){
 
     $('.modal').modal();
 })
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.tap-target');
-  var instances = M.TapTarget.init(elems, options);
-});
+
 </script>
 
 

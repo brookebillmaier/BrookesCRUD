@@ -3,20 +3,28 @@
   <head>
     <% include ./partials/head.ejs %>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <title>Submit Lost Pet</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+          <link rel = "stylesheet" href ="./css/new.css">
+
+    <title>FindMeFido</title>
   </head>
   <body>
-  <h1>  Submit a Lost Pet</h1>
+  <div class = "container">
+    <h1> <center> Submit a Lost Pet</h1></center>
   <form action = "/pets/all" method = "POST">
-    Name: <input type = "text" name = "name"/><br>
-    Missing: <input type = "date" name = "missing"/><br>
-    Image: <input type = "text" name = "img"/><br>
-    About: <input type = "text" name = "about"/><br>
-    Type: <input type = "text" name = "type"/><br>
-    Alert local area via email:<input type = "checkbox" name = "alert" class="filled-in" checked="checked"/>
-    Alert local area via text:<input type = "checkbox" name = "alert" class="filled-in" checked="checked"/>
-    <input type = "submit" value = "Create Pet">
-  </form>
+    Name: <input type = "text" name = "name" class = "col s6"/><br>
+    Missing: <input type = "date" name = "missing" class = "col s6"/><br>
+    Image: <input type = "text" name = "img" class = "col s6"/><br>
+    About: <input type = "text" name = "about" class = "col s6"/><br>
+    Type (Cat or Dog): <input type = "text" name = "type"/><br>
+    <label>ALERT LOCAL AREA VIA EMAIL:<input type = "checkbox" name = "alert" class="filled-in" checked="checked"/><span></span></label>
+    <label>ALERT LOCAL AREA VIA TEXT:<input type = "checkbox" name = "alert" class="filled-in" checked="checked"/><span></span></label>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Create Pet
+<i class="material-icons right">send</i>
+</button>
+      </form>
+    </div>
+</div>
 
   </body>
 </html>
