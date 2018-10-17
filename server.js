@@ -66,6 +66,11 @@ const petsController = require('./controllers/pets')
 app.use('/', petsController)
 
 
+app.get('/', (req, res)=> {
+  res.redirect('/pets')
+  }
+})
+
 //listen
 app.listen(PORT, () => {
   console.log('listening on port:', PORT)
