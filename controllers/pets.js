@@ -7,12 +7,13 @@ const petSeeds = require('../models/seed.js')
 
 
 router.get('/pets', (req, res)=> {
-  Pet.find({}, (error, allPets)=> {
-    res.render('index.ejs', {
-     pets: allPets,
-      currentUser: req.session.currentUser,
-    })
-  })
+  res.send('/pets')
+  // Pet.find({}, (error, allPets)=> {
+  //   res.render('index.ejs', {
+  //    pets: allPets,
+  //     currentUser: req.session.currentUser,
+  //   })
+  // })
 })
 
 router.get('/pets/all', (req, res)=> {
