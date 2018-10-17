@@ -79,23 +79,23 @@ let seedPets = [
   {
     name: 'June',
     about: 'Coonhound - Doggo ipsum woofer you are doin me a concern pats. Dat tungg tho tungg noodle horse heckin angery woofer floofs most angery pupper I have ever seen, blep what a nice floof most angery pupper',
-    img: 'https://cdn1.imggmi.com/uploads/2018/10/18/ce193be5bbab0b341c68f6e0f485f5b8-full.pngresize=width:200,height:250,fit:cro',
+    img: 'https://cdn1.imggmi.com/uploads/2018/10/18/ce193be5bbab0b341c68f6e0f485f5b8-full.pngresize=width:200,height:250,fit:crop',
     missing: 'October 16, 2018',
     type: 'dog',
   },
   {
     name: 'Lil Guy',
     about: 'Boxer - Doggo Ipsum boof h*ck tungg heck dat tungg tho heck woofer doing me a frighten fat boi, porgo shibe long bois lotsa pats ur givin me a spook wrinkler. Borking lotsa pats shoob doggorino borkf, stop it fren. Doge fat boi shoob. ',
-    img: 'https://cdn1.imggmi.com/uploads/2018/10/18/2e1ab4abb697ec680c0a7554bfea5559-full.pngresize=width:200,height:250,fit:cro',
+    img: 'https://cdn1.imggmi.com/uploads/2018/10/18/2e1ab4abb697ec680c0a7554bfea5559-full.pngresize=width:200,height:250,fit:crop',
     missing: 'October 14, 2018',
     type: 'dog',
   },
   {
     name: 'Spice',
     about: 'Domestic Shorthair - Cat ipsum dolor sit amet, himalayan kitten so cougar. Tabby donskoy. Tom donskoy for devonshire rex siamese, tomcat maine coon burmese. Tiger british shorthair turkish angora, bobcat savannah so ragdoll. Kitten. Tiger jaguar scottish fold yet tomcat. ',
-    img: 'https://cdn1.imggmi.com/uploads/2018/10/18/98908bffaa704ba87b1a3ec1b48c5575-full.pngresize=width:200,height:250,fit:cro',
+    img: 'https://cdn1.imggmi.com/uploads/2018/10/18/98908bffaa704ba87b1a3ec1b48c5575-full.pngresize=width:200,height:250,fit:crop',
     missing: 'October 14, 2018',
-    type: 'dog',
+    type: 'cat',
   },
 
 
