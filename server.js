@@ -10,6 +10,26 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const pets = express.Router()
 
+
+
+//use public folder for static assets like css
+app.use(express.static('public'))
+
+//populates req.body with parsed info from forms, if no data from forms it will return an empty object
+app.use(express.urlencoded({extended: false})) //extended: false - does not allow nested objects in query strings
+app.use(express.json());//returns middleware that onlt parses JSON
+app.use(bodyParser.json())
+//method methodOverride
+app.use(methodOverride('_method'))//alow post, put and delete from a form
+
+app.use(session({
+  secret: "secret",
+  resave: false,
+  saveUninitialized: false
+}))
+
+
+
 //const bcyrpt = require('bcrypt')
 //___________________
 //Port
@@ -36,21 +56,6 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // open the connection to mongo
 db.on('open' , ()=>{});
 
-//use public folder for static assets like css
-app.use(express.static('public'))
-
-//populates req.body with parsed info from forms, if no data from forms it will return an empty object
-app.use(express.urlencoded({extended: false})) //extended: false - does not allow nested objects in query strings
-app.use(express.json());//returns middleware that onlt parses JSON
-app.use(bodyParser.json())
-//method methodOverride
-app.use(methodOverride('_method'))//alow post, put and delete from a form
-
-app.use(session({
-  secret: "secret",
-  resave: false,
-  saveUninitialized: false
-}))
 
 
 
