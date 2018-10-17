@@ -12,7 +12,8 @@ img.petimg {
   height: 250px;
 }
 .container {
-    display: flex;'
+    width: 100%;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -26,5 +27,5 @@ img.petimg {
 }
 .buttoncontainer {
   margin-left: 30px;
-  margin-top: 60px;
+  margin-top: 75px;
 }

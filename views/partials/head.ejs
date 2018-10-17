@@ -15,14 +15,13 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/pets">FindMe</a>
+          <a class="navbar-brand" href="/pets"><img src = "http://funkyimg.com/i/2Mafd.png" height="40" class = "brand"></a>
         </div>
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   <ul class="nav navbar-nav">
-           <li><a href = "/pets/all"> View All Pets</a></li>
-           <li><a href = "/pets/new"> New Lost Pet</a></li>
-           <li><a href = "/pets/tips"> Lost Pet Tips</a></li>
-             </ul>
+           <li class = "link"><a href = "/pets/all"> View All Pets</a></li>
+           <li class = "link"><a href = "/pets/new"> Lost Pet?</a></li>
+          </ul>
          <form class="navbar-form navbar-right">
          <ul class="nav navbar-nav navbar-right">
                   <div class = "login">
@@ -32,7 +31,7 @@
                       <input type="submit" class="waves-effect waves-light btn" value="Logout"/>
                       </form>
               <% } else {%>
-                 <li><a class="waves-effect waves-light btn modal-trigger" href="/users/new"> Create Account / Log In</a>
+                 <li><a class="waves-effect waves-light btn modal-trigger" id = "login" href="/users/new"> Create Account / Log In</a>
                                   <%}%><br>
                                   <!-- #modal1 -->
                           </div>
@@ -94,6 +93,25 @@
 </div>
 </div>
 </nav>
+
+
+
+<footer>
+
+  <!-- Element Showed -->
+  <a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">menu</i></a>
+
+  <!-- Tap Target Structure -->
+  <div class="tap-target" data-target="menu">
+    <div class="tap-target-content">
+      <h5>Title</h5>
+      <p>A bunch of text</p>
+    </div>
+  </div>
+
+
+</footer>
+
 </header>
 </html>
 
@@ -102,7 +120,10 @@ $(document).ready(function(){
 
     $('.modal').modal();
 })
-
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.tap-target');
+  var instances = M.TapTarget.init(elems, options);
+});
 </script>
 
 

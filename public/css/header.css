@@ -10,3 +10,15 @@
   color: black;
   font-size: 20px;
 }
+.link{
+  margin-top: 10px;
+  font-size: 20px;
+  color: black;
+}
+
+.brand {
+  margin-top: -5px;
+}
+ #login {
+   margin-top: -20px;
+ }
