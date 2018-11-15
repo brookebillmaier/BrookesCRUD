@@ -4,7 +4,7 @@ FindMeFido
 https://findmefido.herokuapp.com/
 
 ## Approach ##
-This project is focused on bringing lost pets home to their families. Ideally, this app would be utilized in large cities with a large following, where the app could contact people for lost pets within 2 miles of them. The idea of this app is to help find pets that are missing or who have run off. The approach in making this app is focused on displaying the pets in an easy to see manner and having a uniform view among each page. I also decided to create pages that split the animals into categories based on type to easier find pets.
+This project is focused on bringing lost pets home to their families. Ideally, this app would be utilized in large cities with a large following, where the app could contact people for lost pets within 2 miles of them. The idea of this app is to help find pets that are missing or who have run off. The approach in making this app is focused on displaying the pets in an easy to see manner and having a uniform view among each page. I also decided to create pages that split the animals into categories based on type to more easily find pets.
 
 ## Technology Used ##
 This app was created with HTML, CSS, Javascript, and some jQuery. It also utilizes Express, Mongoose, MongodDB, Node.js EJS Express-Session and Method-Override. In the future, Passport will implimented as well to automatically log the user in upon creating an account.
