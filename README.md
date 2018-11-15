@@ -1,6 +1,6 @@
 
-# BrookesCRUD
-FindMeFido
+# FindMeFido
+
 https://findmefido.herokuapp.com/
 
 ## Approach ##
